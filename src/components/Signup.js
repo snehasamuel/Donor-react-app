@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -10,8 +11,20 @@ const Signup = () => {
     var [pswd,setPswd]=useState("")
 
     const viewSigup=(()=>{
-        const details={"name":name,"address":address,"blood_group":blood,"phone_number":number,"username":user,"password":pswd}
-        console.log(details)
+        const data={"donorname":name,"address":address,"blood":blood,"mobile":number,"username":user,"password":pswd}
+        
+       axios.post("http://localhost:8000/api/adddonor",data).then((response)=>{
+console.log(response.data)
+if(response.data.status=="success")
+{
+alert("successfully inserted")
+}
+else
+{
+alert("failed to insert")
+}
+       })
+
     })
   return (
     <div>
