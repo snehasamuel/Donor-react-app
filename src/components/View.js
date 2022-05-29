@@ -10,6 +10,21 @@ console.log(response.data)
 setViewdonor(response.data)
 setLoad(false)
     })
+    const deleteDonor=((id)=>{
+const data={"_id":id}
+axios.post("http://localhost:8000/api/delete",data).then((response)=>{
+console.log(response.data)
+if(response.data.status=="success")
+{
+  alert("deleted successfully")
+}
+else
+{
+  alert("failed to delete")
+}
+})
+      
+    })
   return (
     <div>
         <Header/>
@@ -30,6 +45,7 @@ setLoad(false)
      <th scope="col">Address</th>
      <th scope="col">Blood Group</th>
      <th scope="col">Phone Number</th>
+     <th scope="col">Delete</th>
    </tr>
  </thead>
  <tbody>
@@ -40,6 +56,7 @@ setLoad(false)
       <td>{value.address}</td>
       <td>{value.blood}</td>
       <td>{value.mobile}</td>
+      <td><button onClick={()=>{deleteDonor(value._id)}} className='btn btn-danger'>DELETE</button></td>
     </tr>
   })}
 
