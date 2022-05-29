@@ -11,6 +11,9 @@ const Header = () => {
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
+    <li class="nav-item active">
+<Link class="nav-link" to="/search">Search Donors</Link>
+      </li>
       <li class="nav-item active">
 <Link class="nav-link" to="/view">View Donors</Link>
       </li>

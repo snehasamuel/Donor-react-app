@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
 import View from './components/View';
+import Search from './components/Search';
 function App() {
   return (
    <>
@@ -14,6 +15,7 @@ function App() {
      <Route path="/" exact element={<Signin/>}/>
      <Route path="/signup" exact element={<Signup/>}/>
      <Route path="/view" exact element={<View/>}/>
+     <Route path='/search' exact element={<Search/>}/>
    </Routes>
    </BrowserRouter>
    </>
