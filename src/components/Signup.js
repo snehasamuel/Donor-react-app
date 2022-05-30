@@ -15,7 +15,7 @@ const Signup = () => {
         
        axios.post("http://localhost:8000/api/adddonor",data).then((response)=>{
 console.log(response.data)
-if(response.data.status=="success")
+if(response.data.status==="success")
 {
 alert("successfully inserted")
 }
